@@ -1,0 +1,18 @@
+[package]
+name = "ws-deflate-sidecar"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "A WebSocket reverse-proxy sidecar that adds RFC 7692 permessage-deflate compression"
+
+[dependencies]
+anyhow = "1"
+bytes = "1"
+clap = { version = "4", features = ["derive"] }
+http = "1"
+httparse = "1"
+ratchet = { package = "ratchet_rs", version = "=1.2.1", features = ["deflate", "split"] }
+tokio = { version = "1", features = ["io-util", "macros", "net", "rt-multi-thread", "signal", "time"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+url = "2"
